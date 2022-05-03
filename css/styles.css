@@ -530,3 +530,38 @@ boton ocupe todo el espacio de la celda en el grid*/
         margin: 0 2rem;
     }
 }
+
+/*Collapsibles*/ 
+.collapsible__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collapsible__heading {
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.collapsible__chevron {/*el icono chevron esta perdido :/*/
+    transform: rotate(-155deg);
+    transition: transform 0.3s;
+}
+
+.collapsible__content {
+    /*display: none;*//*la propiedad "display" no se puede animar*/
+    max-height: 0; /*Es un truco para sustituir el display:none y poder animar esta clase*/
+    overflow: hidden; /*trabaja en conjunto con .collapsible__expanded*/
+    opacity: 0; /*le da un efecto de aparicion y desaparicion al aplicar la transition*/
+    transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+    transform: rotate(-245deg);
+}
+
+.collapsible--expanded .collapsible__content {
+    /* display: block; *//*trabaja en conjunto con la clase que esta dos posiciones arriba*/
+    max-height: 100vh; /*toma la maxima altura de su contenedor
+                       si usaramos "height" si tomaria la altura maxima del viewport*/
+    opacity: 1; /*le da un efecto de aparicion y desaparicion al aplicar la transition*/
+}
