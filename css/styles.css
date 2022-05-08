@@ -28,6 +28,7 @@ body {
 h1, h2, h3 {
     color: var(--color-headings);
     margin-bottom: 1rem;
+    line-height: 1.1;
 }
 
 h1 {
@@ -188,10 +189,18 @@ a {
     font-size: 1.8rem;
     font-weight: 600;
     margin: 1rem 0;
+    outline: 0; /*quita el borde que se genera al dar click en el elemento*/
     padding: 2rem 3rem;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
+}
+
+.btn .icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    vertical-align: middle;
 }
 
 .btn--primary {
@@ -271,7 +280,7 @@ a {
 .input-group .input {
     border: 0;
     flex-grow: 1; /*Toma todo el espacio disponible*/
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
 }
 
 .input-group .btn {
@@ -664,5 +673,59 @@ boton ocupe todo el espacio de la celda en el grid*/
 
     .nav__item {
         border: 0;
+    }
+}
+
+/*  Hero  */
+.hero {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+.hero__tagline {
+    font-size: 2rem;
+    color: #b9c3cf;
+    letter-spacing: 1px;
+    margin: 2rem 0 5rem;
+}
+
+.hero__image {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .hero {
+        padding-top: 0;
+    }
+    .hero__content {
+        text-align: left;
+        align-self: center;
+    }
+}
+
+/* Domain block */
+.block-domain .input-group {
+    box-shadow: 0 0 30px 20px #e6ebee;
+    border: 0;
+    margin: 4rem auto;
+    max-width: 720px;
+}
+
+.bloc-domain__prices {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 6rem);
+    font-size: 2rem;
+    font-weight: 600;
+    justify-items: center; /*alinea horizontalmente todo el grid y sus elementos*/
+    max-width: 700px;
+    margin: 0 auto; /*tambien ayuda a centrar este elemento*/
+}
+
+@media screen and (min-width: 768px) {
+    .bloc-domain__prices { /*auto-fit, por si en el futuro queremos agregar mas elementos a este grid*/   
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+                       /*minmax: el tamaño minimo de la columna sera de 10fdm, pero si hay espacio
+                       extra disponible se dividira equitativamente entre todos los elementos para
+                       que el grid ocupe el tamaño maximo del container*/
     }
 }
