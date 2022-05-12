@@ -316,11 +316,21 @@ a {
     color: #fff;
 }
 
+.card--primary .badge--primary {
+    background: #126de4;
+}
+
 .card--secondary .badge--secondary {
     background: #02cdf1;
 }
 
 /* Plans */
+.plan {
+    transition: transform .2s ease-out; /*efecto de animacion sobre la propiedad
+                                       transform que esta aplicada mas abajo
+                                       sobre los cards*/
+}
+
 .plan__name {
     color: #fff;
     margin: 0;
@@ -351,6 +361,10 @@ a {
 }
 
 /*Implementing the "popular badge"*/
+.plan--popular {
+    transform: scale(1.1); /*Aumenta el tamaño del popular plan*/
+}
+
 .plan--popular .card__header {
     position: relative;
 }
@@ -362,6 +376,14 @@ a {
     position: absolute;
     top: -2px;
     right: 5%;
+}
+
+.plan:hover {
+    transform: scale(1.05);
+}
+
+.plan--popular:hover {
+    transform: scale(1.15);
 }
 
 @media screen and (min_width: 1024px) {
@@ -728,4 +750,38 @@ boton ocupe todo el espacio de la celda en el grid*/
                        extra disponible se dividira equitativamente entre todos los elementos para
                        que el grid ocupe el tamaño maximo del container*/
     }
+}
+
+/* Plans Block */
+.block-plans .grid {
+    gap: 8rem 4rem; /*Agrega espacio entre los elementos del grid*/
+}
+
+.block-plans .card {  /*definir tamaño centrar el contenido para tablets*/
+    max-width: 500px;
+    margin: 0 auto;  
+}
+
+/* Features */
+.feature {
+    gap: 4rem 2rem;
+    margin: 12rem 0;
+}
+
+.feature:first-of-type {
+    margin-top: 6rem;
+}
+
+.feature__heading {
+    margin: 1rem 0;
+}
+
+.feature__image {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .feature:nth-of-type(even) .feature__content {
+        order: 2;
+    } /*Cambia el orden de cada elemento par (izquierda/derecha) de los dos elementos del grid*/   
 }
