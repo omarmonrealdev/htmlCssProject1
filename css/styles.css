@@ -613,6 +613,7 @@ boton ocupe todo el espacio de la celda en el grid*/
 
 .block__header{
     text-align: center;
+    margin-bottom: 4rem;
 }
 
 .block__heading {
