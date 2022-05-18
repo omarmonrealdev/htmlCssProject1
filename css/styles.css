@@ -196,7 +196,8 @@ a {
     font-weight: 600;
     margin: 1rem 0;
     outline: 0; /*quita el borde que se genera al dar click en el elemento*/
-    padding: 2rem 3rem;
+    padding: 2rem 4vw; /*4vw: toma el 4% del width del viewport, permitir que el input
+                       tenga suficiente espacio para escribir en small screens*/
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -287,6 +288,8 @@ a {
     border: 0;
     flex-grow: 1; /*Toma todo el espacio disponible*/
     padding: 1.5rem 2rem;
+    width: 0; /*deja que el flex-grow defina el width, con esto corregimos un problema
+    (el input crecia mas que el input-group en pantallas pequeñas*/
 }
 
 .input-group .btn {
@@ -737,8 +740,9 @@ boton ocupe todo el espacio de la celda en el grid*/
 }
 
 .bloc-domain__prices {
+    color: var(--color-headings);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 6rem);
     font-size: 2rem;
     font-weight: 600;
